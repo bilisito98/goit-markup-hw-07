@@ -1,0 +1,50 @@
+.header {
+    border-bottom: 1px solid #ececec;
+
+    &__menu {
+        @include flex-container(row, flex-start, center);
+        flex-wrap: wrap;
+        height: 80px;
+    }
+
+    &__logo {
+        margin-right: 91px;
+    }
+
+    &__nav {
+        @include flex-container(row, space-between, center);
+        flex-wrap: wrap;
+        width: 281px;
+        margin-right: 344px;
+    }
+
+    &__link {
+        @include text(500, 14px, 16px, 0.02em);
+        color: inherit;
+    }
+
+    &__link:hover,
+    &__link:focus,
+    &__link:active {
+        color: getColor(brand);
+    }
+
+    &__contact-information {
+        @include flex-container(row, flex-end, center);
+        gap: 30px;
+    }
+
+    &__contact {
+        color: getColor(links);
+    }
+
+    &__contact:hover svg path {
+        fill: getColor(brand);
+    }
+
+    &__contact-link {
+        @include flex-container(row, flex-end, center);
+        color: inherit;
+        gap: 10px;
+    }
+}

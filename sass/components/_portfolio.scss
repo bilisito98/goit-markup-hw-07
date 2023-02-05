@@ -1,0 +1,89 @@
+.button {
+  @include flex-container(row, center);
+  gap: 8px;
+  margin-top: 106px;
+  margin-bottom: 50px;
+
+  &__menu {
+    background-color: getColor(background2);
+    border: getColor(background2);
+    border-radius: $borders;
+    @include text(500, 16px, 26px);
+    text-align: center;
+    width: 128px;
+    height: 38px;
+  }
+
+  &__menu:hover,
+  &__menu:focus,
+  &__menu:active {
+    background-color: getColor(brand);
+    color: #fff;
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+      0px 2px 2px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+  }
+}
+
+.products {
+  @include flex-container(row, space-between);
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 82px;
+}
+
+.product {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(238, 238, 238);
+  @include flex-container(column, center);
+  max-width: 372px;
+  max-height: 404px;
+  object-fit: cover;
+
+  &:hover,
+  &:focus,
+  &active {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+    cursor: pointer;
+  }
+
+  &__image {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__information {
+    background-color: getColor(brand);
+    opacity: 0.9;
+    color: #fff;
+    @include text(400, 18px, 28px);
+    @include position-top-left(absolute);
+
+    width: 370px;
+    height: 294px;
+    padding: 63px 24px;
+
+    transform: translateY(102%);
+    transition: transform 250ms ease;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &:hover &__information {
+    transform: translateY(0);
+  }
+
+  &__name {
+    @include text(700, 18px, 36px, 0.06em);
+    text-align: left;
+    margin: 20px 24px 4px 24px;
+  }
+
+  &__type {
+    color: #757575;
+    font-size: 16px;
+    text-align: left;
+    padding-left: 24px;
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,30 @@
+.benefits {
+    @include flex-container(row, space-between, stretch);
+    flex-wrap: nowrap;
+    gap: 30px;
+    margin-top: 82px;
+    margin-bottom: 99px;
+
+    &__icon {
+        background: getColor(background2);
+        padding: 25px 102px;
+        max-width: 270px;
+        max-height: 120px;
+        margin-bottom: 30px;
+        border-radius: $borders;
+    }
+
+    &__title {
+        @include text(700, 14px, 16px, 0.03em);
+        text-transform: uppercase;
+        text-align: left;
+        margin-bottom: 10px;
+    }
+
+    &__text {
+        @include text(400, 14px, 24px, 0.03em);
+        color: #757575;
+        text-align: left;
+        width: 270px;
+    }
+}

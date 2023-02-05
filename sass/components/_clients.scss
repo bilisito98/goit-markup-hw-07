@@ -1,0 +1,43 @@
+.clients-section {
+  height: 372px;
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.clients {
+  @include flex-container(row, space-between, flex-start);
+  gap: 30px;
+  margin-top: 50px;
+
+  &__box {
+    width: 170px;
+    height: 92px;
+    border-radius: $borders;
+    border: 1px solid getColor(logos);
+    padding: 14px 32px;
+  }
+
+  &__svg {
+    padding-left: 30px;
+    padding-top: 10px;
+  }
+
+  &--svg {
+    padding-left: 15px;
+  }
+
+  &__logo {
+    fill: getColor(logos);
+  }
+
+  &__box:hover,
+  &__box:focus,
+  &__box:active {
+    border-color: getColor(brand);
+  }
+  &__box:hover &__logo,
+  &__box:focus &__logo,
+  &__box:active &__logo {
+    fill: getColor(brand);
+  }
+}
